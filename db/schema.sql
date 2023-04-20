@@ -1,6 +1,5 @@
 DROP DATABASE IF EXISTS employee_db;
 CREATE DATABASE employee_db;
-
 USE employee_db;
 
 CREATE TABLE department (
@@ -30,4 +29,20 @@ CREATE TABLE employee (
     REFERENCES employee(id)
     ON DELETE SET NULL
 );
+
+
+SELECT department_name 
+FROM department 
+LEFT JOIN role 
+ON department.department_name = role.department_id;
+
+SELECT title, salary, department_id 
+FROM role 
+LEFT JOIN department 
+ON role.department_id = department.id;
+
+SELECT first_name, last_name, role_id, manager_id 
+FROM employee 
+LEFT JOIN role 
+ON employee.role_id = role.department_id;
 
