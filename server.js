@@ -1,7 +1,6 @@
-const express = require('express');
 const inquirer = require('inquirer');
 const mysql = require('mysql2');
-const cTable = require('console.table');
+//const cTable = require('console.table');
 
 const db = mysql.createConnection(
     {
@@ -175,4 +174,8 @@ function addEmployee() {
             console.log(`${response.firstName} ${response.lastName} has been added to the database`);
             start()
         })
+}
+
+function updateEmployee() {
+
 }
